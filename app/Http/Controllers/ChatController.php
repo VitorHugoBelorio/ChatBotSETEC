@@ -25,7 +25,6 @@ class ChatController extends Controller
     public function sendMessage(Request $request)
     {
         $userMessage = $request->input('message');
-
         try {
             $response = $this->geminiService->ask($userMessage);
             return response()->json($response);
@@ -37,6 +36,6 @@ class ChatController extends Controller
     public function listarModelos()
     {
         $response = Http::get("https://generativelanguage.googleapis.com/v1/models?key=" . $this->apiKey);
-        return response()->json();
+        return $response->json();
     }
 }

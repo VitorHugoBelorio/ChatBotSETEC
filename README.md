@@ -5,138 +5,133 @@ O ChatBot SETEC foi desenvolvido para gerar **conteúdos técnicos e educativos*
 
 ---
 
-## 🚀 1. Acessando o Repositório
+## 📚 Material de Apoio da Palestra e Slides
 
-Clone o repositório base do projeto diretamente do GitHub:
+🔗 **Link do Drive:** [Clique aqui para acessar](https://drive.google.com/drive/folders/1ncrLrbMHxBQKpIwmsEiHXOsm4fVsgkgt?usp=sharing)
 
-🔗 **Repositório:** [https://github.com/VitorHugoBelorio/ChatBotSETEC](https://github.com/VitorHugoBelorio/ChatBotSETEC)
-
-> 💡 Caso ainda não tenha uma conta no GitHub, você pode criar uma rapidamente usando sua conta do Google.
+> 💡 O material inclui slides, códigos e recursos adicionais apresentados durante a palestra.
 
 ---
 
-## 🧩 2. Clonando e Abrindo o Projeto
+## 🚀 Como Executar o Projeto
 
-### 2.1 Clonar o repositório
-Abra o **Git Bash** ou o **PowerShell** e execute:
+### 1. Pré-requisitos
+
+-   PHP 8.1 ou superior
+-   Composer
+-   MySQL
+-   XAMPP
+-   VS Code
+-   Git
+
+### 2. Clonando o Projeto
 
 ```bash
 git clone https://github.com/VitorHugoBelorio/ChatBotSETEC
-```
-
-### 2.2 Entrar na pasta do projeto
-```bash
 cd ChatBotSETEC
-```
-
-### 2.3 Abrir o projeto no VS Code
-```bash
 code .
 ```
 
----
-
-## ⚙️ 3. Configurando o Ambiente
-
-### 3.1 Instalar dependências do Laravel
-Com o terminal aberto no VS Code, execute:
+### 3. Instalação das Dependências
 
 ```bash
 composer install
 ```
 
-### 3.2 Criar o arquivo `.env`
-Copie o modelo de configuração:
+### 4. Configuração do Ambiente
+
+1. **Copie o arquivo de ambiente**
 
 ```bash
 cp .env.example .env
 ```
 
-### 3.3 Preencher o `.env`
+2. **Configure o Gemini API**
 
-#### 3.3.1 Gerar a API Key do Gemini
+    - Acesse [Google AI Studio](https://aistudio.google.com/app/api-keys)
+    - Gere sua API Key
+    - Cole no `.env`: `GEMINI_API_KEY=sua_chave_aqui`
 
-1. Faça login com sua conta Google.  
-2. Acesse: [https://aistudio.google.com/app/api-keys](https://aistudio.google.com/app/api-keys)  
-3. Crie uma nova **API Key**.  
-4. Copie a chave e cole no campo `GEMINI_API_KEY` do arquivo `.env`  
-   (sem aspas e sem espaços).
+3. **Configure o banco de dados**
+    - Inicie o XAMPP (MySQL)
+    - Execute no MySQL:
+    ```sql
+    create database chat_ia;
+    ```
+    - Configure o `.env` com suas credenciais do MySQL
 
----
-
-## 🗄️ 4. Banco de Dados
-
-### 4.1 Criar o banco no MySQL
-Abra o **XAMPP**, ligue o servidor **MySQL** e conecte-se pelo **MySQL Workbench**.  
-Em seguida, execute:
-
-```sql
-create database chat_ia;
-```
-
-### 4.2 Rodar as migrations do Laravel
-```bash
-php artisan migrate
-```
-
----
-
-## 🔑 5. Gerar chave da aplicação
+### 5. Finalizando a Configuração
 
 ```bash
 php artisan key:generate
+php artisan migrate
 ```
 
----
-
-## ▶️ 6. Executando o Projeto
-
-Para iniciar o servidor local:
+### 6. Executando o Projeto
 
 ```bash
 php artisan serve
 ```
 
-Acesse o projeto em:  
-👉 [http://localhost:8000](http://localhost:8000)
+Acesse: [http://localhost:8000](http://localhost:8000)
 
 ---
 
-## 🧠 7. Estrutura do Assistente
+## 🧠 Funcionalidades do Chatbot
 
-O chatbot segue o seguinte **formato de resposta**:
+O assistente fornece respostas estruturadas com:
 
-1. **Explicação resumida (até 5 linhas)**  
-   Uma explicação clara e direta sobre o tema solicitado.
-
-2. **Questões de estudo (3 a 5 perguntas)**  
-   Perguntas mistas (múltipla escolha e dissertativas) para fixar o conteúdo.
-
-3. **Exemplo prático**  
-   Um trecho de código ou caso aplicado que demonstre o conceito.
-
-4. **Dica de estudo**  
-   Uma orientação rápida para revisão e memorização.
+-   Explicações concisas
+-   Questões de estudo
+-   Exemplos práticos
+-   Dicas de estudo
 
 ---
 
-## 👨‍🏫 8. Objetivo Educacional
+## 🛠️ Tecnologias Utilizadas
 
-O **ChatBot SETEC** tem como propósito **auxiliar alunos de cursos técnicos e superiores** na área de tecnologia, promovendo **aprendizado autônomo** com **conteúdo técnico e linguagem acessível**.
-
----
-
-## 🧰 Tecnologias Utilizadas
-
-- **Laravel** (Framework PHP)
-- **Composer** (Gerenciador de dependências)
-- **MySQL** (Banco de dados)
-- **XAMPP** (Servidor local)
-- **Gemini API** (IA Educacional)
+-   Laravel
+-   MySQL
+-   XAMPP
+-   Google Gemini API
+-   Composer
 
 ---
 
 ## ✨ Desenvolvido por
 
 **Vitor Hugo Belório**  
-Projeto desenvolvido como material de apoio para a **Semana de Educação, Tecnologia e Ciência (SETEC)**.
+Projeto apresentado na **Semana de Educação, Tecnologia e Ciência (SETEC) 21 de outubro 2025**
+
+---
+
+## 📋 Salvando Uma Cópia do Projeto (Para Participantes do Mini Curso)
+
+### 1. Criando Seu Próprio Repositório
+
+1. Acesse [GitHub](https://github.com)
+2. Clique em "New repository" (botão verde '+' no canto superior direito)
+3. Nome sugerido: `meu-chatbot-setec`
+4. Marque como "Public"
+5. Não adicione README, .gitignore ou License
+6. Clique em "Create repository"
+
+### 2. Clonando e Configurando
+
+```bash
+# Clone o projeto original
+git clone https://github.com/VitorHugoBelorio/ChatBotSETEC
+cd ChatBotSETEC
+
+# Remova o vínculo com o repositório original
+git remote remove origin
+
+# Adicione seu repositório como novo origin
+git remote add origin https://github.com/SEU-USERNAME/meu-chatbot-setec
+
+# Envie o código para seu repositório
+git branch -M main
+git push -u origin main
+```
+
+> 💡 **Dica**: Substitua `SEU-USERNAME` pelo seu nome de usuário do GitHub e `meu-chatbot-setec` pelo nome que você escolheu para seu repositório

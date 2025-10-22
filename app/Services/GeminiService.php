@@ -14,7 +14,7 @@ class GeminiService{
         $this->apiKey = config('services.gemini.api_key');
         $this->endpoint = config('services.gemini.url');
         $this->temperature = 0.7;
-
+        
         $this->systemPrompt = "Você é um assistente de estudos voltado para alunos da área de tecnologia, com foco em:
             - Programação
             - Banco de Dados
@@ -42,7 +42,7 @@ class GeminiService{
         public function ask(string $prompt){
             $response = Http::withHeaders 
             ([
-                'Content-Type' => 'aplication/json'
+                'Content-Type' => 'application/json'
             ])->post($this->endpoint . "?key=" . $this->apiKey,
             [
                 "contents" => [
